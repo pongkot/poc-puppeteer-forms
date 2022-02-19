@@ -8,7 +8,14 @@ const main = async () => {
     await page.waitForNetworkIdle()
     const noteInput = await page.$('textarea.quantumWizTextinputPapertextareaInput.exportTextarea')
     await noteInput.type(`uuid: ${new Date().getTime()}`)
-    await page.waitForTimeout(3000)
+    await page.waitForTimeout(1000)
+    const optionsDropdown = await page.$('div.quantumWizMenuPaperselectOption.appsMaterialWizMenuPaperselectOption.freebirdThemedSelectOptionDarkerDisabled.exportOption')
+    await optionsDropdown.click()
+    await page.waitForTimeout(1000)
+    await page.keyboard.press('ArrowDown');
+    await page.waitForTimeout(1000)
+    await page.keyboard.press('Enter');
+    await page.waitForTimeout(1000)
     // TODO click submit button
     await page.evaluate(() => {
         const submitButton = document.querySelector('div[role=button]')
