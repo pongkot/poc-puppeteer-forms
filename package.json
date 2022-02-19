@@ -1,7 +1,7 @@
 {
   "name": "poc-puppeteer-forms",
   "version": "1.0.0",
-  "description": "",
+  "description": "A proof of concept for puppeteer submit google forms",
   "main": "main.js",
   "type": "module",
   "scripts": {
